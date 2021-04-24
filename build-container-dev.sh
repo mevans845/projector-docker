@@ -24,7 +24,7 @@ cd ../projector-server
 ./gradlew :projector-server:distZip
 cd -
 
-containerName=${1:-projector-idea-c}
+containerName=${1:-projector-pycharm-p}
 downloadUrl=${2:-https://download.jetbrains.com/idea/ideaIC-2019.3.5.tar.gz}
 
 # build container:

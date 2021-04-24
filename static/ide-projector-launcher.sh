@@ -35,7 +35,7 @@ done
 
 if [[ ${#ideRunnerCandidates[@]} != 1 ]]; then
     echo "Can't find a single candidate to be IDE runner script so can't select a single one:"
-    echo ${ideRunnerCandidates[*]}
+    echo "${ideRunnerCandidates[*]}"
     exit 1
 fi
 
@@ -50,7 +50,7 @@ cp "$IDE_RUN_FILE_NAME.sh" "$IDE_RUN_FILE_NAME-projector.sh"
 # classpath "$CLASSPATH"
 # to
 # classpath "$CLASSPATH:$IDE_HOME/projector-server/lib/*"
-sed -i 's+classpath "$CLASSPATH"+classpath "$CLASSPATH:$IDE_HOME/projector-server/lib/*"+g' "$IDE_RUN_FILE_NAME-projector.sh"
+sed -i "s+classpath \"\$CLASSPATH\"+classpath \"\$CLASSPATH:\$IDE_HOME/projector-server/lib/*\"+g" "$IDE_RUN_FILE_NAME-projector.sh"
 
 # change
 # com.intellij.idea.Main
